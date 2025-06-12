@@ -22,7 +22,7 @@ jobs:
       run: dotnet test ./eShopOnWeb.sln --configuration Release
 
     - name: Publish Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: dotnet-build
         path: |
