@@ -20,3 +20,12 @@ jobs:
     
     - name: Test with dotnet
       run: dotnet test ./eShopOnWeb.sln --configuration Release
+
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: dotnet-build
+        path: |
+          **/bin/Release/*
+          !**/bin/Release/net*/**/ref/**
+          !**/bin/Release/net*/**/wwwroot/**
